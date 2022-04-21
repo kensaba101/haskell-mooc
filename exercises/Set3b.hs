@@ -141,10 +141,12 @@ sumsOf' (x:xs) prev = (x+prev):(sumsOf' xs (x+prev))
 
 merge :: [Int] -> [Int] -> [Int]
 merge [] [] = []
+
 merge [] (y:ys) = y:(merge [] ys)
 merge (x:xs) [] = x:(merge xs [])
 
-merge (x:xs) (y:ys) | x <= y = x:(merge (xs) (y:ys))
+--compare first (smallest) elem of each list, add the smaller one to head of new list
+merge (x:xs) (y:ys) | x <= y = x:(merge (xs) (y:ys)) 
 merge (x:xs) (y:ys) | y <= x = y:(merge (x:xs) (ys))
 
 
@@ -211,9 +213,9 @@ maybeMap :: (a -> Maybe b) -> [a] -> [b]
 maybeMap f [] = []
 maybeMap f xs = maybeMap' f xs
 
-maybeMap' _ [] = [] -- empty function
+maybeMap' _ [] = [] 
 maybeMap' f (x:xs)
- | isSomething (f x) = getVal (f x) : maybeMap' f xs -- get the val after Just and append it to head of list
+ | isSomething (f x) = getVal (f x) : maybeMap' f xs -- get the val after Just and append it to the list
  | otherwise = maybeMap' f xs -- "on to the next one" - Jay Z
 
 isSomething Nothing = False
