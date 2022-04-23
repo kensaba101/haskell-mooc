@@ -20,7 +20,7 @@ valAtRoot t = todo
 ------------------------------------------------------------------------------
 -- Ex 2: compute the size of a tree, that is, the number of Node
 -- constructors in it
---
+--  
 -- Examples:
 --   treeSize (Node 3 (Node 7 Empty Empty) Empty)  ==>  2
 --   treeSize (Node 3 (Node 7 Empty Empty) (Node 1 Empty Empty))  ==>  3

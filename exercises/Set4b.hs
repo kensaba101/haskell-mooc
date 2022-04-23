@@ -129,5 +129,5 @@ myLast xs = foldr lastHelper Nothing xs
 
 lastHelper :: a -> Maybe a -> Maybe a
 lastHelper x Nothing = Just x -- initial match - return value of last element in xs
-lastHelper x result = result -- subsequent matches - keep returning result, ignore current value x
+lastHelper x result = result -- subsequent matches - keep returning result, ignore current value x  
 
