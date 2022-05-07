@@ -1,4 +1,6 @@
 -- Exercise set 5b: playing with binary trees
+{-# OPTIONS_GHC -Wno-unrecognised-pragmas #-}
+{-# HLINT ignore "Redundant bracket" #-}
 
 module Set5b where
 
